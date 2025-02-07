@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: #121212;
+  color: #959595;}
+
+a {
+  text-decoration: none;
+  color: #959595;
+}
+

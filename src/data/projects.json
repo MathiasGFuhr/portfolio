@@ -1,0 +1,56 @@
+[
+  {
+    "id": "project1",
+    "name": "PrimeFlix",
+    "description": "Plataforma de streaming.",
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "images": ["/assets/primeFlix.png"],
+    "github": "https://github.com/seuprojeto1",
+    "deploy": "https://deploy-do-site.com"
+  },
+  {
+    "id": "project2",
+    "name": "Outro Projeto",
+    "description": "Aplicativo de exemplo.",
+    "technologies": ["Vue.js", "Firebase"],
+    "images": ["/assets/outroProjeto.png"],
+    "github": "https://github.com/seuprojeto2",
+    "deploy": "https://deploy-do-site2.com"
+  },
+  {
+    "id": "project3",
+    "name": "PrimeFlix",
+    "description": "Plataforma de streaming.",
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "images": ["/assets/primeFlix.png"],
+    "github": "https://github.com/seuprojeto1",
+    "deploy": "https://deploy-do-site.com"
+  },
+  {
+    "id": "project4",
+    "name": "Outro Projeto",
+    "description": "Aplicativo de exemplo.",
+    "technologies": ["Vue.js", "Firebase"],
+    "images": ["/assets/outroProjeto.png"],
+    "github": "https://github.com/seuprojeto2",
+    "deploy": "https://deploy-do-site2.com"
+  },
+  {
+    "id": "project5",
+    "name": "PrimeFlix",
+    "description": "Plataforma de streaming.",
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "images": ["/assets/primeFlix.png"],
+    "github": "https://github.com/seuprojeto1",
+    "deploy": "https://deploy-do-site.com"
+  },
+  {
+    "id": "project6",
+    "name": "Outro Projeto",
+    "description": "Aplicativo de exemplo.",
+    "technologies": ["Vue.js", "Firebase"],
+    "images": ["/assets/outroProjeto.png"],
+    "github": "https://github.com/seuprojeto2",
+    "deploy": "https://deploy-do-site2.com"
+  }
+]

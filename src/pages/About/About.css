@@ -1,0 +1,217 @@
+/* Layout geral */
+.about {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  height: calc(100vh - 120px);
+  margin-top: 40px;
+}
+
+/* Títulos */
+.about h2 {
+  text-align: center;
+  color: #FEFEFE;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 18px;
+}
+
+/* Descrição */
+.about .description {
+  color: #707070;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Contêiner do conteúdo principal */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Imagem do projeto */
+.img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Imagem com tamanho máximo */
+.about-content .img img {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+/* Efeito no fundo da imagem */
+.img::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 400px;
+  height: 480px;
+  border-radius: 50% 50% 0 0;
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* Texto principal ao lado da imagem */
+.about-content .content p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 190%;
+  max-width: 631px;
+  margin-bottom: 40px;
+}
+
+/* Tecnologias */
+.technologies ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+/* Itens da lista de tecnologias */
+.technologies ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.technologies ul li .icon {
+  font-size: 40px;
+}
+
+.technologies ul li span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FD6F00;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .about {
+    padding: 0 40px;
+  }
+
+  .about h2 {
+    font-size: 30px;
+  }
+
+  .about .description {
+    font-size: 18px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-content .img img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-content .content p {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .technologies ul {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .technologies ul li {
+    padding-top: 20px;
+    align-items: center;
+  }
+
+  .technologies ul li .icon {
+    font-size: 35px;
+  }
+
+  .technologies ul li span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+
+  .about h2 {
+    font-size: 26px;
+  }
+
+  .about .description {
+    font-size: 16px;
+  }
+
+  .about-content .img img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .about-content .content p {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .technologies ul li .icon {
+    font-size: 30px;
+  }
+
+  .technologies ul li span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 0 15px;
+    margin-top: 10px;
+  }
+
+  .about h2 {
+    font-size: 22px;
+  }
+
+  .about .description {
+    font-size: 14px;
+  }
+
+  .about-content .img img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  .about-content .content p {
+    font-size: 14px;
+  }
+
+  .technologies ul li .icon {
+    font-size: 28px;
+  }
+
+  .technologies ul li span {
+    font-size: 16px;
+  }
+}

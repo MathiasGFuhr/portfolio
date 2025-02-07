@@ -1,0 +1,31 @@
+.button {
+  padding: 12px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para botão de Download */
+.button.download {
+  background-color: #959595;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.button.download:hover {
+  background-color: #707070;
+}
+
+/* Estilo para botão do WhatsApp */
+.button.whatsapp {
+  background: #E46400;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.button.whatsapp:hover {
+  background: #CA5900;
+}

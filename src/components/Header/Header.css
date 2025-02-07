@@ -1,0 +1,116 @@
+body.menu-open {
+  overflow: hidden;  /* Impede a rolagem da página quando o menu está aberto */
+}
+
+header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+header .logo {
+  font-family: "K2D", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 0.9px;
+
+  background: linear-gradient(90deg, #FA6E00 0%, #E60026 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header nav ul {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+}
+
+header nav ul li a {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  transition: 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+  color: #FA6E00;
+}
+
+/* ===================== */
+/* RESPONSIVIDADE */
+/* ===================== */
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 100;
+  position: relative;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background: #FA6E00;
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+/* Animação para transformar em "X" */
+.menu-icon.open .bar:nth-child(1) {
+  transform: translateY(18px) rotate(45deg);
+}
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 40px;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  header nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+
+  }
+
+  header nav.open {
+    transform: translateX(0);
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  header nav ul li a {
+    color: white;
+    font-size: 24px;
+  }
+}
