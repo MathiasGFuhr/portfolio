@@ -1,0 +1,104 @@
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-container h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+form input,
+form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #FA6E00;
+  outline: none;
+}
+
+form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+form button {
+  background-color: #FA6E00;
+  color: white;
+  padding: 14px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+}
+
+form button:hover {
+  background-color: #E60026;
+  transform: scale(1.05);
+}
+
+form button:active {
+  transform: scale(0.98);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 30px 15px;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 14px;
+  }
+
+  form button {
+    padding: 12px 20px;
+  }
+}

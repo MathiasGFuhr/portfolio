@@ -7,6 +7,9 @@ import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import Project from "./pages/Project";
 
+import Admin from "./pages/Admin";
+import Login from "./pages/Login";
+
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,15 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/admin",
+        element: <Admin />,
+      },
+      {
+        path: "/secretdoor",
+        element: <Login />,
+      },
+
     ],
   }
 ]);

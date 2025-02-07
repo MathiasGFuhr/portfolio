@@ -1,0 +1,63 @@
+/* Estilos para a página de login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+h2 {
+  font-family: "K2D", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #FA6E00 0%, #E60026 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #575757;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #959595;
+  color: #333;
+}
+
+input:focus {
+  outline: none;
+  border-color: #FA6E00;
+}
+
+button {
+  padding: 15px;
+  font-size: 16px;
+  background-color: #FA6E00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #e60026;
+}
