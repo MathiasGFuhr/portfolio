@@ -17,7 +17,7 @@ export const Header = () => {
     } else {
       document.body.classList.remove("menu-open");
     }
-  }, [menuOpen]);  // Dependência do menuOpen para que seja executado quando o estado mudar
+  }, [menuOpen]);
 
   return (
     <header>
