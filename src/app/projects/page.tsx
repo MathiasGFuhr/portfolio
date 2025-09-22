@@ -34,7 +34,8 @@ export default function ProjectsPage() {
         .select("id,title,description,cover_url,github_url,demo_url,featured,project_techs(techs(name))")
         .eq("published", true)
         .order("sort_order", { ascending: true });
-      setProjects((data as Project[]) ?? []);
+      const typed = (data as unknown as Project[]) ?? [];
+      setProjects(typed);
       setLoading(false);
     }
     load();
