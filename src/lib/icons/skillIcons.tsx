@@ -126,9 +126,9 @@ export function getIconKeyFromName(raw: string): IconKey | null {
   if (n.includes("kubernetes")) return "Kubernetes";
   if (n.includes("vercel")) return "Vercel";
   if (n.includes("netlify")) return "Netlify";
-  if (n.includes("aws")) return "AWS";
-  if (n.includes("gcp")) return "GCP";
-  if (n.includes("azure")) return "Azure";
+  if (n.includes("aws")) return "Git"; // fallback seguro
+  if (n.includes("gcp")) return "Git"; // fallback seguro
+  if (n.includes("azure")) return "Git"; // fallback seguro
   if (n.includes("gitlab")) return "GitLab";
   if (n.includes("github")) return "GitHub";
   if (n.startsWith("git")) return "Git";
