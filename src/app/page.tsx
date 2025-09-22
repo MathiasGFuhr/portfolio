@@ -233,7 +233,6 @@ export default async function HomePage() {
                 githubUrl={project.github_url}
                 demoUrl={project.demo_url}
                 techs={project.project_techs.map(pt => pt.techs.name)}
-                result={project.result}
               />
             ))}
           </div>
