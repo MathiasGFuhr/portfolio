@@ -5,6 +5,7 @@ import FeaturedProjects from '@/components/FeaturedProjects';
 import Metrics from '@/components/Metrics';
 import Skills from '@/components/Skills';
 import ProjectCard from '@/components/ProjectCard';
+import { ICONS } from '@/lib/icons/skillIcons';
 
 // Tipos para os dados do Supabase
 interface ProjectTech {
@@ -206,7 +207,10 @@ export default async function HomePage() {
           </p>
         </div>
         
-        <Skills skillsItems={techs} />
+        <Skills items={techs.map(tech => ({
+          key: (tech.icon_key as keyof typeof ICONS) || 'React',
+          name: tech.name
+        }))} />
       </section>
 
       {/* Todos os Projetos */}
