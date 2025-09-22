@@ -100,7 +100,7 @@ export function getIconKeyFromName(raw: string): IconKey | null {
   if (n.includes("ruby")) return "Ruby";
   if (n === "c ") return "C";
   if (n.includes("c++")) return "C++";
-  if (n.includes("c#")) return "C#";
+  // C# desabilitado (ícone removido do mapa)
   if (n.includes("swift")) return "Swift";
   if (n.includes("kotlin")) return "Kotlin";
   if (n.includes("dart")) return "Dart";
