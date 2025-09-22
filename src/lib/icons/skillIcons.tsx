@@ -94,7 +94,7 @@ export function getIconKeyFromName(raw: string): IconKey | null {
   if (n.includes("javascript")) return "JavaScript";
   if (n.includes("typescript") || n === "ts") return "TypeScript";
   if (n.includes("python")) return "Python";
-  if (n.includes("java")) return "Java";
+  // Java desabilitado (ícone removido do mapa)
   if (n.includes("golang") || n === "go") return "Go";
   if (n.includes("php")) return "PHP";
   if (n.includes("ruby")) return "Ruby";
