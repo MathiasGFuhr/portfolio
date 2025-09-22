@@ -12,7 +12,7 @@ import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiSupabase } from "r
  */
 export default function Hero({ projectsCount }: { projectsCount: number }) {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden mt-8 sm:mt-12 lg:mt-16">
       {/* Container padrão do projeto */}
       <div className="max-w-7xl mx-auto px-4">
         {/* Card do Hero */}
