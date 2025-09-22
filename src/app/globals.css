@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Variáveis de tema (light) */
+:root {
+  /* Paleta LIGHT — Grafite + Esmeralda */
+  --background: #f5f5f6;      /* fundo neutro suave */
+  --surface: #ffffff;          /* cartões/superfícies */
+  --foreground: #111827;       /* texto principal (grafite 900) */
+  --muted-foreground: #4b5563; /* texto secundário (grafite 600) */
+  --border: #e5e7eb;           /* bordas sutis */
+  --accent: #10b981;           /* esmeralda */
+  --accent-foreground: #06281f;/* texto sobre o accent */
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Tema dark quando a classe .dark está no <html> */
+.dark {
+  /* Paleta DARK */
+  --background: #0a0a0a;
+  --surface: #121212;
+  --foreground: #ededed;
+  --muted-foreground: #b3b3b3;
+  --border: #262626;
+  --accent: #108019;
+  --accent-foreground: #052019;
+  color-scheme: dark;
+}
+
+/* Estilos base */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100svh; /* garante altura mínima da viewport */
+  overflow-anchor: none; /* evita jump inesperado ao inserir conteúdo */
+}
+
+/* Utilidades globais para usar a paleta */
+.surface { background-color: var(--surface); }
+.border-color { border-color: var(--border); }
+.muted { color: var(--muted-foreground); }
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+.btn-accent:hover { filter: brightness(0.95); }
+
+/* Borda animada para cartões (usada em Skills) */
+.animated-border {
+  background-image: linear-gradient(
+    120deg,
+    var(--accent) 0%,
+    transparent 28%,
+    transparent 72%,
+    var(--accent) 100%
+  );
+  background-size: 200% 200%;
+  transition: background-position 600ms ease, box-shadow 300ms ease;
+}
+.animated-border:hover {
+  background-position: 100% 0;
+}
+
+/* Anel gradiente animado (conic) que aparece no hover */
+/* Hover sutil e elegante para Skill cards */
+.skill-hover {
+  position: relative;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 60%, color-mix(in oklab, var(--accent) 18%, transparent) 100%);
+  background-size: 200% 100%;
+  transition: background-position .6s ease, box-shadow .3s ease, transform .3s ease;
+}
+.skill-hover:hover {
+  background-position: 100% 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15), 0 0 0 1px var(--accent) inset;
+  transform: translateY(-4px);
+}
+
+.icon-float { transition: transform .3s ease; }
+.skill-hover:hover .icon-float { transform: translateY(-2px) scale(1.06); }
+
+/* Scrollbar estilizado coerente com o tema */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: var(--background); }
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--accent) 55%, transparent);
+  border: 2px solid var(--background);
+  border-radius: 9999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--accent) 70%, transparent);
+}
+
+/* Firefox */
+html { scrollbar-width: thin; scrollbar-color: color-mix(in oklab, var(--accent) 60%, transparent) var(--background); }
+
+/* Header nav underline animation */
+.nav-link { position: relative; padding-bottom: 2px; transition: color .25s ease, opacity .25s ease; }
+.nav-link::after {
+  content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: scaleX(0); transform-origin: left; transition: transform .3s ease;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+.nav-link.active { opacity: 1; }
+.nav-link.active::after { transform: scaleX(1); }
+
+/* CTA lift/glow */
+.cta-accent { transition: transform .25s ease, box-shadow .25s ease; }
+.cta-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+
+/* Chips estilizados (Hero, listas) */
+.chip {
+  position: relative;
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .4rem .8rem; border-radius: 9999px; font-size: .75rem;
+  background: var(--surface); color: var(--foreground);
+  border: 1px solid var(--border);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.chip::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  padding: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; opacity: .25;
+}
+.chip:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.16); border-color: color-mix(in oklab, var(--accent) 35%, var(--border)); }
+.chip .chip-dot { width: .4rem; height: .4rem; border-radius: 9999px; background: var(--accent); box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 35%, transparent); }

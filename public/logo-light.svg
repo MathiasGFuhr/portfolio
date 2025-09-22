@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Mathias Logo Light">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b1770b"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect x="14" y="14" width="228" height="228" rx="44" fill="#ffffff" stroke="url(#g)" stroke-width="6"/>
+  <g fill="none" stroke="url(#g)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 172 V84 l32 36 32-36 v88"/>
+    <path d="M148 84 h44 M148 132 h36 M148 84 v88"/>
+  </g>
+</svg>
+
