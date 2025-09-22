@@ -61,7 +61,32 @@ async function getProjects(): Promise<Project[]> {
       return [];
     }
 
-    return data as Project[];
+    // Normaliza o shape vindo do Supabase para garantir que
+    // project_techs[].techs seja sempre um ÚNICO objeto (e não array)
+    const normalized: Project[] = (data ?? []).map((p: any) => {
+      const projectTechs: ProjectTech[] = Array.isArray(p.project_techs)
+        ? p.project_techs.map((pt: any) => {
+            const techs = Array.isArray(pt?.techs)
+              ? (pt.techs[0] ?? { name: "", icon_key: null })
+              : (pt?.techs ?? { name: "", icon_key: null });
+            return { techs } as ProjectTech;
+          })
+        : [];
+
+      return {
+        id: String(p.id),
+        title: String(p.title ?? ""),
+        description: p.description ?? null,
+        cover_url: p.cover_url ?? null,
+        github_url: p.github_url ?? null,
+        demo_url: p.demo_url ?? null,
+        featured: Boolean(p.featured),
+        result: p.result ?? null,
+        project_techs: projectTechs,
+      } as Project;
+    });
+
+    return normalized;
   } catch (error) {
     console.error('Erro na função getProjects:', error);
     return [];
@@ -181,7 +206,7 @@ export default async function HomePage() {
         ) : (
           <div className="text-center py-12">
             <p className="text-muted">Nenhum projeto encontrado.</p>
-          </div>
+    </div>
         )}
       </section>
     </main>
