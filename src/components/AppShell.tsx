@@ -14,7 +14,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     const t = setTimeout(() => setShowOverlay(false), 120);
     return () => clearTimeout(t);
   }, []);
-  // Removemos overlay em mudanças de rota para evitar flicker; overlay só no primeiro paint.
+  // Removemos overlay em mudanças de rota para evitar flicker; overlay só no primeiro paint.....
 
   return (
     <div className="min-h-screen grid grid-rows-[auto,1fr,auto]">
