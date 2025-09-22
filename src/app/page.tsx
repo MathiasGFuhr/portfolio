@@ -168,7 +168,16 @@ export default async function HomePage() {
         </div>
         
         {featuredProjects.length > 0 ? (
-          <FeaturedProjects projects={featuredProjects} />
+          <FeaturedProjects items={featuredProjects.map(project => ({
+            id: project.id,
+            title: project.title,
+            description: project.description,
+            cover_url: project.cover_url,
+            demo_url: project.demo_url,
+            github_url: project.github_url,
+            featured: project.featured,
+            techs: project.project_techs.map(pt => pt.techs.name)
+          }))} />
         ) : (
           <div className="text-center py-12">
             <p className="text-muted">Nenhum projeto em destaque encontrado.</p>
