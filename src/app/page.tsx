@@ -52,7 +52,7 @@ export default async function Home() {
     demo_url: p.demo_url,
     github_url: p.github_url,
     featured: p.featured,
-    result: (p as any).result ?? null,
+    result: (p as unknown as { result?: string | null }).result ?? null,
     // Extrai nomes das techs da relação project_techs → techs
     techs: ((p.project_techs ?? []).map((pt) => pt.techs?.name).filter(Boolean) as string[]),
   }));
@@ -70,7 +70,7 @@ export default async function Home() {
       const key = fromIconKey ?? inferred;
       return key ? { key, name: tech.name } : null;
     })
-    .filter(Boolean) as { key: any; name: string }[];
+    .filter((x): x is { key: keyof typeof ICONS; name: string } => Boolean(x));
 
   const skillsCount = skillsItems.length;
 

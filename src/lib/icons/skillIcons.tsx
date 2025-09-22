@@ -2,10 +2,10 @@
 import {
   SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiSupabase, SiOpenai, SiFramer, SiMongodb,
   SiNodedotjs, SiPrisma, SiPostgresql, SiMysql, SiSqlite, SiDocker, SiKubernetes, SiVercel, SiNetlify,
-  SiAmazonaws, SiGooglecloud, SiMicrosoftazure, SiGit, SiGithub, SiGitlab, SiFigma, SiVisualstudiocode,
-  SiJetbrains, SiIntellijidea, SiWebstorm, SiPython, SiJava, SiGo, SiPhp, SiRuby, SiC, SiCplusplus, SiCsharp,
+  SiGit, SiGithub, SiGitlab, SiFigma,
+  SiJetbrains, SiIntellijidea, SiWebstorm, SiPython, SiGo, SiPhp, SiRuby, SiC, SiCplusplus,
   SiSwift, SiKotlin, SiDart, SiFlutter, SiAngular, SiVuedotjs, SiSvelte, SiBootstrap, SiChakraui, SiRedux,
-  SiJest, SiTestinglibrary, SiCypress, SiPlaywright, SiEslint, SiPrettier, SiStorybook, SiGraphql,
+  SiJest, SiTestinglibrary, SiCypress, SiEslint, SiPrettier, SiStorybook, SiGraphql,
   SiApollographql
 } from "react-icons/si";
 
@@ -21,13 +21,13 @@ export const ICONS = {
   JavaScript: <SiJavascript className="h-6 w-6" aria-hidden />,
   TypeScript: <SiTypescript className="h-6 w-6" aria-hidden />,
   Python: <SiPython className="h-6 w-6" aria-hidden />,
-  Java: <SiJava className="h-6 w-6" aria-hidden />,
+  // Java removido (ícone indisponível nesta versão do react-icons)
   Go: <SiGo className="h-6 w-6" aria-hidden />,
   PHP: <SiPhp className="h-6 w-6" aria-hidden />,
   Ruby: <SiRuby className="h-6 w-6" aria-hidden />,
   C: <SiC className="h-6 w-6" aria-hidden />,
   "C++": <SiCplusplus className="h-6 w-6" aria-hidden />,
-  "C#": <SiCsharp className="h-6 w-6" aria-hidden />,
+  // C# removido (ícone indisponível nesta versão do react-icons)
   Swift: <SiSwift className="h-6 w-6" aria-hidden />,
   Kotlin: <SiKotlin className="h-6 w-6" aria-hidden />,
   Dart: <SiDart className="h-6 w-6" aria-hidden />,
@@ -56,16 +56,14 @@ export const ICONS = {
   Kubernetes: <SiKubernetes className="h-6 w-6" aria-hidden />,
   Vercel: <SiVercel className="h-6 w-6" aria-hidden />,
   Netlify: <SiNetlify className="h-6 w-6" aria-hidden />,
-  AWS: <SiAmazonaws className="h-6 w-6" aria-hidden />,
-  GCP: <SiGooglecloud className="h-6 w-6" aria-hidden />,
-  Azure: <SiMicrosoftazure className="h-6 w-6" aria-hidden />,
+  // Ícones de cloud removidos para compatibilidade (podem ser reativados futuramente)
 
   // Git/Design/IDE
   Git: <SiGit className="h-6 w-6" aria-hidden />,
   GitHub: <SiGithub className="h-6 w-6" aria-hidden />,
   GitLab: <SiGitlab className="h-6 w-6" aria-hidden />,
   Figma: <SiFigma className="h-6 w-6" aria-hidden />,
-  VSCode: <SiVisualstudiocode className="h-6 w-6" aria-hidden />,
+  // VSCode removido (ícone indisponível nesta versão)
   JetBrains: <SiJetbrains className="h-6 w-6" aria-hidden />,
   IntelliJ: <SiIntellijidea className="h-6 w-6" aria-hidden />,
   WebStorm: <SiWebstorm className="h-6 w-6" aria-hidden />,
@@ -75,7 +73,7 @@ export const ICONS = {
   Jest: <SiJest className="h-6 w-6" aria-hidden />,
   TestingLibrary: <SiTestinglibrary className="h-6 w-6" aria-hidden />,
   Cypress: <SiCypress className="h-6 w-6" aria-hidden />,
-  Playwright: <SiPlaywright className="h-6 w-6" aria-hidden />,
+  // Playwright removido (ícone indisponível nesta versão)
   ESLint: <SiEslint className="h-6 w-6" aria-hidden />,
   Prettier: <SiPrettier className="h-6 w-6" aria-hidden />,
   Storybook: <SiStorybook className="h-6 w-6" aria-hidden />,
