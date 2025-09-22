@@ -213,35 +213,7 @@ export default async function HomePage() {
         }))} />
       </section>
 
-      {/* Todos os Projetos */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Todos os Projetos</h2>
-          <p className="text-xl text-muted max-w-2xl mx-auto">
-            Explore minha coleção completa de trabalhos
-          </p>
-        </div>
-        
-        {projects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                coverUrl={project.cover_url}
-                githubUrl={project.github_url}
-                demoUrl={project.demo_url}
-                techs={project.project_techs.map(pt => pt.techs.name)}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-muted">Nenhum projeto encontrado.</p>
-    </div>
-        )}
-      </section>
+      {/** Seção "Todos os Projetos" removida conforme solicitado */}
     </main>
   );
 }
