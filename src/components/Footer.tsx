@@ -3,6 +3,8 @@
  * - Informações de rodapé e links sociais
  * - Usa variáveis do tema para manter consistência
  */
+import Link from "next/link";
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -21,10 +23,10 @@ export default function Footer() {
 
         {/* Coluna 2: navegação */}
         <nav className="grid grid-cols-2 gap-2 md:justify-items-center">
-          <a className="nav-link opacity-80" href="/">Home</a>
-          <a className="nav-link opacity-80" href="/projects">Projetos</a>
-          <a className="nav-link opacity-80" href="/about">Sobre</a>
-          <a className="nav-link opacity-80" href="/contact">Contato</a>
+          <Link className="nav-link opacity-80" href="/">Home</Link>
+          <Link className="nav-link opacity-80" href="/projects">Projetos</Link>
+          <Link className="nav-link opacity-80" href="/about">Sobre</Link>
+          <Link className="nav-link opacity-80" href="/contact">Contato</Link>
         </nav>
 
         {/* Coluna 3: social/contato */}

@@ -21,6 +21,17 @@ type ProjectCard = {
   project_techs: { techs: { name: string } | null }[] | null;
 };
 
+type FeaturedItem = {
+  id: string;
+  title: string;
+  description: string | null;
+  demo_url: string | null;
+  github_url: string | null;
+  featured: boolean | null;
+  cover_url?: string | null;
+  techs: string[];
+};
+
 export default async function Home() {
   // Consulta: busca projetos publicados com suas techs relacionadas
   const { data, error } = await supabaseClient
@@ -84,7 +95,7 @@ export default async function Home() {
         {error && <p className="mt-3 text-sm text-red-500">Erro: {error.message}</p>}
       </div>
 
-      <FeaturedProjects items={featured as any} />
+      <FeaturedProjects items={featured as unknown as FeaturedItem[]} />
       <Metrics projectsCount={projects.length} skillsCount={skillsCount} />
       <Skills items={skillsItems} />
 
