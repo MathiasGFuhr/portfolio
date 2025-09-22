@@ -12,31 +12,33 @@ import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiSupabase } from "r
  */
 export default function Hero({ projectsCount }: { projectsCount: number }) {
   return (
-    <section className="relative overflow-hidden surface rounded-2xl border border-color p-8 sm:p-12">
+    <section className="relative overflow-hidden surface rounded-2xl border border-color px-6 py-10 sm:px-10 sm:py-14">
       {/* Gradiente animado de fundo */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full blur-3xl"
+        className="pointer-events-none absolute -top-28 -right-20 h-80 w-80 rounded-full blur-3xl"
         style={{ background: "radial-gradient(closest-side, var(--accent) 30%, transparent)" }}
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 0.2, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
 
-      <div className="flex items-center gap-3">
+      {/* Conteúdo centralizado e com largura máxima controlada */}
+      <div className="max-w-5xl mx-auto">
+      <div className="flex flex-wrap items-center gap-3">
         <span className="inline-flex items-center gap-2 text-xs font-medium px-2.5 py-1 rounded-full border border-color bg-[color:var(--background)]">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[color:var(--accent)]" /> Disponível para projetos
         </span>
         <span className="text-sm uppercase tracking-widest muted">Desenvolvedor Front‑end</span>
       </div>
-      <h1 className="mt-3 text-4xl sm:text-6xl font-extrabold leading-tight">
+      <h1 className="mt-4 text-4xl md:text-5xl xl:text-6xl font-extrabold leading-[1.1] tracking-tight">
         Construo interfaces rápidas, acessíveis e memoráveis.
       </h1>
-      <p className="mt-4 text-base muted max-w-2xl">
+      <p className="mt-5 text-base md:text-lg muted max-w-3xl">
         Crio experiências digitais elegantes e performáticas, com foco em acessibilidade e resultados reais. Explore meus projetos e vamos conversar sobre sua ideia.
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-3">
+      <div className="mt-7 flex flex-wrap gap-3">
         <Link href="/projects" className="btn-accent rounded-full px-5 py-2.5 text-sm font-medium shadow-sm">
           Ver projetos ({projectsCount})
         </Link>
@@ -46,7 +48,7 @@ export default function Hero({ projectsCount }: { projectsCount: number }) {
       </div>
 
       {/* Chips de stack */}
-      <div className="mt-6 flex flex-wrap gap-2 text-xs">
+      <div className="mt-8 flex flex-wrap gap-2 text-xs">
         {["React", "Next.js", "TypeScript", "Tailwind", "Supabase"].map((t, i) => (
           <motion.span
             key={t}
@@ -66,7 +68,8 @@ export default function Hero({ projectsCount }: { projectsCount: number }) {
           </motion.span>
         ))}
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[color:var(--accent)]/60 to-transparent" />
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[color:var(--accent)]/50 to-transparent" />
     </section>
   );
 }
