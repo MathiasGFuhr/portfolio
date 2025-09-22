@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import Hint from "@/components/Hint";
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
@@ -57,10 +58,11 @@ function MosaicCard({ item, className = "" }: { item: Item; className?: string }
     >
       {/* Capa */}
       {item.cover_url ? (
-        <img
+        <Image
           src={item.cover_url}
           alt={`Capa do projeto ${item.title}`}
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
         />
       ) : (
         <div className="absolute inset-0 grid place-items-center bg-black/40">

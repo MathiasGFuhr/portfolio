@@ -9,6 +9,7 @@
  */
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 
@@ -46,15 +47,20 @@ export default function ProjectCard({
         {/* Capa do projeto (opcional). Usamos <img> para aceitar URLs externas sem configuração */}
         {coverUrl ? (
           <div className="relative h-44 w-full overflow-hidden">
-            <motion.img
-              src={coverUrl}
-              alt={`Capa do projeto ${title}`}
-              className="h-full w-full object-cover"
-              loading="lazy"
+            <motion.div
               initial={{ scale: 1.02 }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-            />
+              className="relative h-full w-full"
+            >
+              <Image
+                src={coverUrl}
+                alt={`Capa do projeto ${title}`}
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+            </motion.div>
             {/* Fade sutil para legibilidade do título */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-black/5 to-transparent" />
           </div>

@@ -4,6 +4,7 @@
  * - Usa variáveis do tema para manter consistência
  */
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,7 +14,7 @@ export default function Footer() {
         {/* Coluna 1: marca */}
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <img src="/logo-mark.svg" alt="Mathias" className="w-6 h-6" />
+            <Image src="/logo-mark.svg" alt="Mathias" width={24} height={24} className="w-6 h-6" />
             <span className="font-semibold">Mathias Fuhr</span>
           </div>
           <p className="muted">

@@ -8,6 +8,7 @@
  */
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -50,7 +51,7 @@ export default function Header() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}>
-            <img src="/logo.svg" alt="Mathias Fuhr" className="w-8 h-8 sm:w-9 sm:h-9" />
+            <Image src="/logo.svg" alt="Mathias Fuhr" width={36} height={36} className="w-8 h-8 sm:w-9 sm:h-9" />
             <span className="font-extrabold tracking-tight text-lg sm:text-xl text-[color:var(--accent)] drop-shadow-[0_1px_0_rgba(0,0,0,.2)]">Mathias Fuhr</span>
           </Link>
         </div>
