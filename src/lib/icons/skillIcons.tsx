@@ -83,6 +83,11 @@ export const ICONS = {
 
 export type IconKey = keyof typeof ICONS;
 
+// Type guard utilitário
+export function isIconKey(value: string | null | undefined): value is IconKey {
+  return !!value && Object.prototype.hasOwnProperty.call(ICONS, value);
+}
+
 // Fallback heurístico por nome (para quando icon_key não for fornecido)
 export function getIconKeyFromName(raw: string): IconKey | null {
   const n = raw.trim().toLowerCase();
