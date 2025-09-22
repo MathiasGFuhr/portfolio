@@ -12,19 +12,23 @@ import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiSupabase } from "r
  */
 export default function Hero({ projectsCount }: { projectsCount: number }) {
   return (
-    <section className="relative overflow-hidden surface rounded-2xl border border-color px-6 py-10 sm:px-10 sm:py-14">
-      {/* Gradiente animado de fundo */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute -top-28 -right-20 h-80 w-80 rounded-full blur-3xl"
-        style={{ background: "radial-gradient(closest-side, var(--accent) 30%, transparent)" }}
-        initial={{ opacity: 0, scale: 0.7 }}
-        animate={{ opacity: 0.2, scale: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      />
+    <section className="relative overflow-hidden">
+      {/* Container padrão do projeto */}
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Card do Hero */}
+        <div className="relative surface rounded-2xl border border-color px-6 py-10 sm:px-10 sm:py-14">
+          {/* Gradiente animado de fundo (relativo ao card) */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute -top-28 -right-20 h-80 w-80 rounded-full blur-3xl"
+            style={{ background: "radial-gradient(closest-side, var(--accent) 30%, transparent)" }}
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 0.2, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          />
 
-      {/* Conteúdo centralizado e com largura máxima controlada */}
-      <div className="max-w-5xl mx-auto">
+          {/* Conteúdo centralizado e com largura máxima controlada */}
+          <div className="max-w-5xl">
       <div className="flex flex-wrap items-center gap-3">
         <span className="inline-flex items-center gap-2 text-xs font-medium px-2.5 py-1 rounded-full border border-color bg-[color:var(--background)]">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[color:var(--accent)]" /> Disponível para projetos
@@ -68,8 +72,10 @@ export default function Hero({ projectsCount }: { projectsCount: number }) {
           </motion.span>
         ))}
       </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[color:var(--accent)]/50 to-transparent" />
+        </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[color:var(--accent)]/50 to-transparent" />
     </section>
   );
 }
