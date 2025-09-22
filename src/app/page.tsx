@@ -26,6 +26,27 @@ interface Project {
   project_techs: ProjectTech[];
 }
 
+// Tipo para os dados brutos vindos do Supabase
+interface SupabaseProject {
+  id: string;
+  title: string;
+  description: string | null;
+  cover_url: string | null;
+  github_url: string | null;
+  demo_url: string | null;
+  featured: boolean;
+  result: string | null;
+  project_techs: Array<{
+    techs: {
+      name: string;
+      icon_key: string | null;
+    } | Array<{
+      name: string;
+      icon_key: string | null;
+    }>;
+  }>;
+}
+
 // Função para buscar projetos do Supabase
 async function getProjects(): Promise<Project[]> {
   try {
@@ -63,9 +84,9 @@ async function getProjects(): Promise<Project[]> {
 
     // Normaliza o shape vindo do Supabase para garantir que
     // project_techs[].techs seja sempre um ÚNICO objeto (e não array)
-    const normalized: Project[] = (data ?? []).map((p: any) => {
+    const normalized: Project[] = (data as SupabaseProject[] ?? []).map((p: SupabaseProject) => {
       const projectTechs: ProjectTech[] = Array.isArray(p.project_techs)
-        ? p.project_techs.map((pt: any) => {
+        ? p.project_techs.map((pt) => {
             const techs = Array.isArray(pt?.techs)
               ? (pt.techs[0] ?? { name: "", icon_key: null })
               : (pt?.techs ?? { name: "", icon_key: null });
